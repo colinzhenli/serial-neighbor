@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: serial-neighbor
+Version: 0.1.0
+Summary: Serial order neighbor search module using spatial encoding.
+Home-page: https://github.com/colinzhenli/serial-neighbor
+Author: Zhen Li
+Author-email: zla247@sfu.ca
+License: Apache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# serial-neighbor
+
+A lightweight and fast implementation of spatial neighbor search using serialization encoding (like z-order and Hilbert curves). Designed for 3D point cloud applications, compatible with PyTorch.
+
+## Installation
+```bash
+pip install serial-neighbor
+```
+
+## Usage Example
+```python
+from serial_neighbor_lib import serial_neighbor
+import torch
+
+points = torch.rand(1000, 3).cuda()
+query_xyz = torch.rand(100, 3).cuda()
+idx, dists = serial_neighbor(points, query_xyz, ["z"], k_neighbors=8)
+print(idx.shape, dists.shape)
+```
