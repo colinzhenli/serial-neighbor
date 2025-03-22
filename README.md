@@ -17,7 +17,13 @@ pip install serial-neighbor
 
 ### `serial_neighbor(...)`
 
-Finds k nearest neighbors for each query point using serial encoding.
+Finds k nearest neighbors for each query point using serial encoding. We propose to retrieve a neighborhood from a 1-D ordered list, by serializing points along a space-filling curve, and excluding the impact of points distant from the query (i.e. remove false positives).
+
+<p align="center">
+  <img src="assets/Neighboring.png" width="800"/>
+</p>
+
+
 
 #### **Arguments:**
 
@@ -85,6 +91,7 @@ This module is part of the work described in the paper:
 
 ## 📰 News
 
+- **[2025/03/22]** The package [`serial-neighbor`](https://pypi.org/project/serial-neighbor/) is released.
 - **[2025/02/21]** Code released!
 - **[2025/02/19]** ArXiv version is released.
 
